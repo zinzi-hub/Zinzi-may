@@ -1,1 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Zinzi May | Software Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        /* Navigation */
+        nav {
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #111827, #1d4ed8);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #bfdbfe;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #e5e7eb;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #1d4ed8;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #dbeafe;
+            transform: translateY(-2px);
+        }
+
+        /* General sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #111827;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* About */
+        .about-text {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+
+        /* Experience */
+        .experience-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .experience-card h3 {
+            color: #1d4ed8;
+            margin-bottom: 5px;
+        }
+
+        .experience-card .date {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .skill.completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #1d4ed8;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #1d4ed8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Education */
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #1d4ed8;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            background: #e5e7eb;
+        }
+
+        .contact p {
+            margin-bottom: 20px;
+            color: #4b5563;
+        }
+
+        .github-btn {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .github-btn:hover {
+            background: #374151;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Zinzi May</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Zinzi May</h1>
+
+            <h2>Digital Associate | Aspiring Software Developer</h2>
+
+            <p>
+                ICT Support Services graduate with a passion for technology,
+                software development, artificial intelligence and building
+                practical digital solutions.
+            </p>
+
+            <a href="#projects" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+
+            <p class="about-text">
+                I am an ICT Support Services graduate currently working as a
+                Digital Associate at CAPACITI, where I am developing my
+                technical and professional skills in the digital space.
+                With a foundation in IT support and a growing passion for
+                technology, I chose to pursue Software Development to
+                strengthen my ability to build practical solutions through
+                code.
+
+                <br><br>
+
+                I enjoy learning new technologies, solving problems, and
+                turning ideas into useful digital experiences. Through my
+                projects, I have explored areas such as artificial
+                intelligence, software development and career-focused
+                technology. I am continuously expanding my skills and
+                working towards growing as a software developer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+
+            <div class="experience-card">
+                <h3>Digital Associate — CAPACITI</h3>
+
+                <p class="date">Current Role</p>
+
+                <p>
+                    Working in the digital technology space while developing
+                    technical, professional and problem-solving skills.
+                    Currently focused on Software Development and expanding
+                    my knowledge of modern technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+
+            <div class="skills">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">Python</span>
+                <span class="skill">React</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Git & GitHub</span>
+
+                <span class="skill completed">
+                    AI & Prompt Engineering ✓
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+
+            <div class="projects">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>WorkFlow Whisperer</h3>
+
+                    <p>
+                        An AI-powered workplace productivity project designed
+                        to assist with tasks such as email generation,
+                        meeting summarisation, task planning, research
+                        assistance and AI-powered conversations.
+                    </p>
+
+                    <a
+                        href="https://github.com/zinzi-hub/work-flow-whisperer-84"
+                        target="_blank"
+                        class="project-link">
+                        View Project →
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>CareerBuddy SA</h3>
+
+                    <p>
+                        An AI career mentoring project focused on helping
+                        South African Grade 9–12 learners explore career
+                        options, subject choices and education pathways.
+                    </p>
+
+                    <a
+                        href="https://github.com/kavierjogie/CareerBuddySA"
+                        target="_blank"
+                        class="project-link">
+                        View Project →
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+
+            <div class="education-card">
+                <h3>Diploma in ICT Support Services</h3>
+
+                <p>
+                    Academic foundation in Information and Communication
+                    Technology, with a focus on IT support and technical
+                    problem solving.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+
+            <p>
+                I'm interested in software development, AI and building
+                useful technology solutions.
+            </p>
+
+            <a
+                href="https://github.com/zinzi-hub"
+                target="_blank"
+                class="github-btn">
+                Visit My GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Zinzi May. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
