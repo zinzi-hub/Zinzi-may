@@ -53,13 +53,15 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 #cf{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
 #cf input{flex:1;min-width:0;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:15px system-ui,sans-serif}
 #cf button{padding:0 14px;border:0;border-radius:6px;background:var(--acc);color:var(--bg);font:600 14px system-ui,sans-serif;cursor:pointer}
+.avail{display:inline-block;font:600 14px system-ui,sans-serif;padding:6px 12px;border:1px solid var(--acc);border-radius:20px;color:var(--acc);margin:0 0 18px}.avail::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px}
 </style>
 </head>
 <body>
 <header>
-<nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certificates">Certificates</a><a href="#" id="navChat">Ask about Zinzi</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Main"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#certificates">Certificates</a><a href="#" id="navChat">Ask about Zinzi</a><a href="#contact">Contact</a></nav>
 <div class="hero">
 <h1>Zinzi May</h1>
+<span class="avail">Available immediately for entry-level software development roles</span>
 <p>Digital Associate at Capaciti in Cape Town. I build web apps and AI-powered tools, from backend logic to interface design, and I'm looking for my first software development role.</p>
 <a class="btn main" href="Zinzi_May_Resume.pdf" download>Download CV</a>
 <a class="btn" href="https://github.com/zinzi-hub">GitHub</a>
@@ -80,7 +82,7 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <article class="proj">
 <h3>CareerBuddySA</h3>
 <p class="meta">Group project · My role: backend developer</p>
-<p>An AI-powered career mentor for South African Grade 9–12 pupils. It helps them understand their strengths, explore career options and make subject and study choices.</p>
+<p>AI-powered career-guidance platform for South African Grade 9 to 12 pupils. I built the backend logic that takes a pupil's strengths, interests and subjects and passes them to an AI model to generate personalised career and subject recommendations. Built and deployed with Lovable.</p>
 <ul class="tags"><li>AI</li><li>Backend</li><li>Lovable</li></ul>
 <p class="links"><a href="https://grade-genius-mentor.lovable.app">Live demo</a><a href="https://github.com/zinzi-hub/CareerBuddySA">Code</a></p>
 </article>
@@ -88,8 +90,8 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <article class="proj">
 <h3>AI Budget Planner</h3>
 <p class="meta">Group project · My role: researcher</p>
-<p>A full-stack budgeting app for young adults. It tracks income and expenses, analyses spending with AI, offers a chat with a financial advisor, and supports savings goals and PDF reports.</p>
-<p>I researched the target audience and how young adults earn, spend and save, and used the findings to help shape the app's features.</p>
+<p>Full-stack web app on Next.js 14 (App Router) with TypeScript, using Supabase PostgreSQL with Row Level Security and Supabase Auth with route-protecting middleware. The Groq API (with model fallbacks) powers spending analysis and a context-aware finance chatbot. Features recurring-expense automation, Recharts dashboards and jsPDF reports, deployed on Vercel.</p>
+<p>As the researcher, I studied the target audience and how young adults earn, spend and save, and used the findings to help shape the app's features.</p>
 <ul class="tags"><li>Next.js 14</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>Groq API</li><li>Recharts</li><li>jsPDF</li><li>Vercel</li></ul>
 <p class="links"><a href="https://ai-budget-planner-wine.vercel.app" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/zinzi-hub/ai-budget-planner">Code</a></p>
 </article>
@@ -97,7 +99,7 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <article class="proj">
 <h3>WC Hospital Feedback</h3>
 <p class="meta">Group project · My role: UI designer</p>
-<p>A security-hardened web app for the Western Cape Department of Health to collect, analyse and report on patient feedback from public hospitals.</p>
+<p>Security-hardened Next.js 14 and TypeScript application for the Western Cape Department of Health. Patient feedback is stored in Supabase PostgreSQL behind Supabase Auth, and Groq AI analyses it so staff can report on trends across public hospitals. I designed the user interface.</p>
 <ul class="tags"><li>Next.js 14</li><li>TypeScript</li><li>Supabase (PostgreSQL + Auth)</li><li>Groq AI</li></ul>
 <p class="links"><a href="https://github.com/zinzi-hub/wc-hospital-feedback">Code</a></p>
 </article>
@@ -105,20 +107,45 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <article class="proj">
 <h3>Work Flow Whisperer</h3>
 <p class="meta">Solo project · AI Google Essentials programme</p>
-<p>A tool that automates repetitive tasks and improves professional workflows. I built it end to end using AI-assisted development and prompt engineering.</p>
+<p>Solo project that automates repetitive workflow tasks. I designed the prompts and structured the AI-assisted development in Lovable, styled the interface with Tailwind CSS, and managed the code with Git and GitHub.</p>
 <ul class="tags"><li>Tailwind CSS</li><li>Prompt engineering</li><li>Lovable AI</li><li>GitHub</li></ul>
 <p class="links"><a href="https://github.com/zinzi-hub/work-flow-whisperer-84">Code</a></p>
 </article>
 </section>
 
+<section id="skills">
+<h2>Skills</h2>
+<div class="cols">
+<div><h3>Web development</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li></ul></div>
+<div><h3>Backend and tools</h3><ul class="tags"><li>Supabase (PostgreSQL and Auth)</li><li>Git and GitHub</li><li>Vercel</li><li>GitHub Pages</li></ul></div>
+<div><h3>AI and data</h3><ul class="tags"><li>Prompt engineering</li><li>Groq API</li><li>Lovable AI</li><li>Machine learning concepts</li><li>Python (foundations)</li><li>Data science foundations</li></ul></div>
+<div><h3>Support and office</h3><ul class="tags"><li>Microsoft Office (Word, Excel, PowerPoint, Access)</li><li>Troubleshooting</li><li>Help desk support</li><li>Windows</li><li>Basic Linux</li></ul></div>
+<div><h3>Professional</h3><ul class="tags"><li>Communication</li><li>Teamwork</li><li>Research</li><li>Attention to detail</li><li>Customer service</li><li>Time management</li></ul></div>
+</div>
+</section>
+
 <section id="experience">
 <h2>Experience and education</h2>
-<ul class="plain">
-<li><strong>Digital Associate</strong>, Capaciti, Cape Town (current)</li>
-<li><strong>Customer service</strong>, McDonald's (May 2026 – July 2026)</li>
-<li><strong>Education Assistant</strong>, Mvumelwano Primary School (June 2025 – November 2025)</li>
-<li><strong>Diploma in ICT in Support Services</strong>, Walter Sisulu University (graduated 2025)</li>
-</ul>
+<article class="proj">
+<h3>Digital Associate</h3>
+<p class="meta">Capaciti, Cape Town · 2026 to present</p>
+<p>Completed an AI and data science bootcamp, then specialised in software development. Built four projects in team and solo settings using Next.js, TypeScript, Supabase and AI tools.</p>
+</article>
+<article class="proj">
+<h3>Customer Service</h3>
+<p class="meta">McDonald's · May 2026 to July 2026</p>
+<p>Served customers in a fast-paced environment, handling orders and queries accurately and politely while working as part of a team.</p>
+</article>
+<article class="proj">
+<h3>Education Assistant</h3>
+<p class="meta">Mvumelwano Primary School · June 2025 to November 2025</p>
+<p>Supported 15+ teaching staff with administration, kept 500+ student records accurate in Excel, and gave first-line IT support for computers, printers and learning software.</p>
+</article>
+<article class="proj">
+<h3>Diploma in ICT in Support Services</h3>
+<p class="meta">Walter Sisulu University · Graduated 2025</p>
+<p>Studied network administration, database management, systems support, help desk operations and software development.</p>
+</article>
 </section>
 
 <section id="certificates">
@@ -133,6 +160,7 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 
 <section id="contact">
 <h2>Contact</h2>
+<p><strong>Availability:</strong> Available immediately for entry-level software development opportunities. I can work on-site, hybrid or remote. Based in Cape Town.</p>
 <p>Email: <a href="mailto:zinzimay18@gmail.com">zinzimay18@gmail.com</a><br>
 GitHub: <a href="https://github.com/zinzi-hub">github.com/zinzi-hub</a></p>
 </section>
@@ -167,7 +195,7 @@ const KB=[
 {k:['contact','email','mail','reach','hire','get in touch','phone','call'],a:"The best way to reach Zinzi is by email: "+L.mail+". You can also find her on GitHub: "+L.gh+"."},
 {k:['github','repo','source','git'],a:"Zinzi's GitHub is "+L.gh+". Code links for each project are in the Projects section."},
 {k:['where','location','live','based','cape town','city'],a:"Zinzi is based in Cape Town, Western Cape, South Africa."},
-{k:['looking','available','open to','seeking','opportunit','role are'],a:"Zinzi is looking for an entry-level software development role. Email her at "+L.mail+" to talk."},
+{k:['looking','available','open to','seeking','opportunit','role are'],a:"Zinzi is available immediately for entry-level software development opportunities. She can work on-site, hybrid or remote, and is based in Cape Town. Email her at "+L.mail+" to talk."},
 {k:['speak','languages spoken','xhosa','english'],a:"Zinzi speaks English (fluent) and isiXhosa (native)."},
 {k:['thank','thanks','bye'],a:"You're welcome! Feel free to email Zinzi at "+L.mail+"."}
 ];
