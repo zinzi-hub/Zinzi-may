@@ -35,11 +35,29 @@ ul.plain{padding-left:20px}
 #log p{margin:0 0 8px}
 .chips button{font:14px system-ui,sans-serif;margin:0 6px 6px 0;padding:6px 10px;border:1px solid var(--acc);background:none;color:var(--acc);border-radius:16px;cursor:pointer}
 footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;border-top:1px solid var(--line)}
+
+#chatBtn{position:fixed;right:20px;bottom:20px;z-index:50;width:60px;height:60px;border-radius:50%;border:0;background:var(--acc);color:var(--bg);cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center}
+#chatBtn svg{width:28px;height:28px}
+#chatBtn:hover{transform:scale(1.06)}
+#chatPanel{position:fixed;right:20px;bottom:92px;z-index:50;width:min(370px,calc(100vw - 32px));height:min(520px,calc(100vh - 120px));background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.3);display:none;flex-direction:column;font:15px/1.5 system-ui,sans-serif;overflow:hidden}
+#chatPanel.open{display:flex}
+.ch{background:var(--acc);color:var(--bg);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.ch button{background:none;border:0;color:inherit;font-size:22px;cursor:pointer;line-height:1}
+#msgs{flex:1;overflow:auto;padding:12px}
+.m{max-width:88%;padding:8px 12px;border-radius:12px;margin:0 0 8px;word-wrap:break-word}
+.m.bot{background:var(--bg);border:1px solid var(--line)}
+.m.me{background:var(--acc);color:var(--bg);margin-left:auto}
+.m a{font-weight:600}
+.sug{padding:0 12px 6px;display:flex;flex-wrap:wrap;gap:6px}
+.sug button{font:13px system-ui,sans-serif;padding:5px 10px;border:1px solid var(--acc);background:none;color:var(--acc);border-radius:14px;cursor:pointer}
+#cf{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+#cf input{flex:1;min-width:0;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:15px system-ui,sans-serif}
+#cf button{padding:0 14px;border:0;border-radius:6px;background:var(--acc);color:var(--bg);font:600 14px system-ui,sans-serif;cursor:pointer}
 </style>
 </head>
 <body>
 <header>
-<nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certificates">Certificates</a><a href="#ask">Ask about Zinzi</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#certificates">Certificates</a><a href="#" id="navChat">Ask about Zinzi</a><a href="#contact">Contact</a></nav>
 <div class="hero">
 <h1>Zinzi May</h1>
 <p>Digital Associate at Capaciti in Cape Town. I build web apps and AI-powered tools, from backend logic to interface design, and I'm looking for my first software development role.</p>
@@ -51,7 +69,8 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <main>
 <section id="about">
 <h2>About me</h2>
-<p>I hold a Diploma in ICT in Support Services from Walter Sisulu University (2025). At Capaciti I completed a bootcamp in AI and data science, then chose software development as my specialisation track. I've worked in education support and customer service, which taught me to explain technical things clearly and to listen to the people I'm building for.</p>
+<p>I'm a Digital Associate at Capaciti in Cape Town who builds web apps with practical AI features. With a Diploma in ICT, 11 Coursera certificates in AI, machine learning and software engineering, and four projects delivered, I turn what I learn into working products.</p>
+<p>My time supporting teachers and serving customers taught me to communicate clearly and build for real users. <strong>I'm looking for an entry-level software development role</strong> where I can keep learning and contribute from day one.</p>
 </section>
 
 <section id="projects">
@@ -63,15 +82,16 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <p class="meta">Group project · My role: backend developer</p>
 <p>An AI-powered career mentor for South African Grade 9–12 pupils. It helps them understand their strengths, explore career options and make subject and study choices.</p>
 <ul class="tags"><li>AI</li><li>Backend</li><li>Lovable</li></ul>
-<p class="links"><a href="https://grade-genius-mentor.lovable.app">Live demo</a><a href="https://github.com/kavierjogie/CareerBuddySA">Code</a></p>
+<p class="links"><a href="https://grade-genius-mentor.lovable.app">Live demo</a><a href="https://github.com/zinzi-hub/CareerBuddySA">Code</a></p>
 </article>
 
 <article class="proj">
 <h3>AI Budget Planner</h3>
 <p class="meta">Group project · My role: researcher</p>
 <p>A full-stack budgeting app for young adults. It tracks income and expenses, analyses spending with AI, offers a chat with a financial advisor, and supports savings goals and PDF reports.</p>
+<p>I researched the target audience and how young adults earn, spend and save, and used the findings to help shape the app's features.</p>
 <ul class="tags"><li>Next.js 14</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>Groq API</li><li>Recharts</li><li>jsPDF</li><li>Vercel</li></ul>
-<p class="links"><a href="https://github.com/kavierjogie/ai-budget-planner">Code</a><a href="REPLACE-WITH-YOUR-VERCEL-URL">Live demo</a></p>
+<p class="links"><a href="https://ai-budget-planner-wine.vercel.app" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/zinzi-hub/ai-budget-planner">Code</a></p>
 </article>
 
 <article class="proj">
@@ -79,7 +99,7 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 <p class="meta">Group project · My role: UI designer</p>
 <p>A security-hardened web app for the Western Cape Department of Health to collect, analyse and report on patient feedback from public hospitals.</p>
 <ul class="tags"><li>Next.js 14</li><li>TypeScript</li><li>Supabase (PostgreSQL + Auth)</li><li>Groq AI</li></ul>
-<p class="links"><a href="https://github.com/kavierjogie/wc-hospital-feedback">Code</a></p>
+<p class="links"><a href="https://github.com/zinzi-hub/wc-hospital-feedback">Code</a></p>
 </article>
 
 <article class="proj">
@@ -111,14 +131,6 @@ footer{padding:30px 20px 50px;color:var(--mute);font:14px system-ui,sans-serif;b
 </div>
 </section>
 
-<section id="ask">
-<h2>Ask about Zinzi</h2>
-<div class="chat">
-<div id="log" aria-live="polite"><p>Pick a question below.</p></div>
-<div class="chips" id="chips"></div>
-</div>
-</section>
-
 <section id="contact">
 <h2>Contact</h2>
 <p>Email: <a href="mailto:zinzimay18@gmail.com">zinzimay18@gmail.com</a><br>
@@ -126,17 +138,52 @@ GitHub: <a href="https://github.com/zinzi-hub">github.com/zinzi-hub</a></p>
 </section>
 </main>
 <footer>&copy; 2026 Zinzi May. Built from scratch with HTML, CSS and JavaScript.</footer>
+<button id="chatBtn" aria-label="Open chat: ask about Zinzi" aria-expanded="false" aria-controls="chatPanel">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div id="chatPanel" role="dialog" aria-label="Chat about Zinzi">
+<div class="ch"><span>Ask about Zinzi</span><button id="chatClose" aria-label="Close chat">&times;</button></div>
+<div id="msgs" aria-live="polite"></div>
+<div class="sug" id="sug"></div>
+<form id="cf"><input id="ci" type="text" placeholder="Type a question..." aria-label="Your question" autocomplete="off"><button type="submit">Send</button></form>
+</div>
 <script>
-const faq={
-"What do you do?":"I'm a Digital Associate at Capaciti, specialising in software development with a background in AI and data science.",
-"What have you built?":"Four projects: CareerBuddySA, AI Budget Planner, WC Hospital Feedback and Work Flow Whisperer. See the Projects section for my role in each.",
-"What's your experience?":"Education Assistant at Mvumelwano Primary School, customer service at McDonald's, and the Capaciti bootcamp.",
-"What did you study?":"A Diploma in ICT in Support Services at Walter Sisulu University, graduated 2025.",
-"How can I contact you?":"Email zinzimay18@gmail.com or find me on GitHub as zinzi-hub."};
-const log=document.getElementById('log'),chips=document.getElementById('chips');
-Object.keys(faq).forEach(q=>{const b=document.createElement('button');b.textContent=q;
-b.onclick=()=>{log.innerHTML='';const a=document.createElement('p'),r=document.createElement('p');
-a.innerHTML='<strong></strong>';a.firstChild.textContent=q;r.textContent=faq[q];log.append(a,r)};chips.append(b)});
+const L={gh:'<a href="https://github.com/zinzi-hub" target="_blank" rel="noopener">github.com/zinzi-hub</a>',
+cv:'<a href="Zinzi_May_Resume.pdf" download>Download her CV</a>',
+mail:'<a href="mailto:zinzimay18@gmail.com">zinzimay18@gmail.com</a>'};
+const KB=[
+{k:['hello','hi ','hey','good morning','good afternoon'],a:"Hi! I can answer questions about Zinzi's projects, skills, education, experience and certificates. What would you like to know?"},
+{k:['who is','who are','about zinzi','about her','about you','introduce','yourself','summary','background'],a:"Zinzi May is a Digital Associate at Capaciti in Cape Town who builds web apps with AI features. She holds a Diploma in ICT in Support Services, completed an AI and data science bootcamp, earned 11 Coursera certificates plus NEMISA data science certificates, and built four projects. She is looking for an entry-level software development role."},
+{k:['careerbuddy','career buddy','mentor','pupil','grade 9'],a:"CareerBuddySA is an AI career mentor for South African Grade 9 to 12 pupils. It helps them understand their strengths, explore careers and choose subjects. Zinzi was the backend developer on this group project."},
+{k:['budget','finance','money','savings'],a:"AI Budget Planner is a full-stack budgeting app for young adults with expense tracking, AI spending analysis, an AI advisor chat, savings goals and PDF reports. Zinzi was the researcher on this group project. It uses Next.js, React, TypeScript, Tailwind CSS, Supabase, Groq API and Vercel."},
+{k:['hospital','health','feedback','patient'],a:"WC Hospital Feedback is a secure web app for the Western Cape Department of Health to collect and analyse patient feedback from public hospitals. Zinzi was the UI designer on this group project, built with Next.js, TypeScript, Supabase and Groq AI."},
+{k:['whisperer','workflow','work flow','automate','solo'],a:"Work Flow Whisperer is Zinzi's solo project from the AI Google Essentials programme. It automates repetitive tasks and improves professional workflows, built with Tailwind CSS, prompt engineering and Lovable AI."},
+{k:['project','built','build','portfolio','work on','made'],a:"Zinzi has four projects: CareerBuddySA (backend developer), AI Budget Planner (researcher), WC Hospital Feedback (UI designer) and Work Flow Whisperer (solo). Ask about any of them by name, or see the Projects section above."},
+{k:['role','responsib','contribut'],a:"On the group projects, Zinzi was backend developer on CareerBuddySA, researcher on AI Budget Planner and UI designer on WC Hospital Feedback. Work Flow Whisperer was her own solo project."},
+{k:['skill','tech','language','stack','tool','framework','program','code','coding','know'],a:"Web: HTML, CSS, JavaScript, TypeScript, Next.js, React, Tailwind CSS. Backend and tools: Supabase, Git and GitHub, Vercel. AI: prompt engineering, Groq API, Lovable. She also knows Python basics, Microsoft Office and help desk support."},
+{k:['educat','study','studied','degree','diploma','university','school','qualif','matric'],a:"Zinzi has a Diploma in ICT in Support Services from Walter Sisulu University (graduated 2025) and completed her matric at A.M. Zantsi Senior Secondary School in 2018."},
+{k:['experience','job','employ','work history','worked','career','capaciti','mcdonald','education assistant'],a:"Current: Digital Associate at Capaciti. Before that: customer service at McDonald's (May to July 2026) and Education Assistant at Mvumelwano Primary School (June to November 2025), where she supported staff, kept student records and gave first-line IT support."},
+{k:['certif','course','coursera','nemisa','ibm','training','learn'],a:"Zinzi has 11 Coursera certificates, including AI For Everyone, Generative AI with LLMs, Supervised and Unsupervised Learning, and Introduction to Software Engineering, plus NEMISA data science certificates. Each Coursera one is linked in the Certificates section."},
+{k:['cv','resume','resum'],a:"You can "+L.cv+" as a PDF, or use the Download CV button at the top of the page."},
+{k:['contact','email','mail','reach','hire','get in touch','phone','call'],a:"The best way to reach Zinzi is by email: "+L.mail+". You can also find her on GitHub: "+L.gh+"."},
+{k:['github','repo','source','git'],a:"Zinzi's GitHub is "+L.gh+". Code links for each project are in the Projects section."},
+{k:['where','location','live','based','cape town','city'],a:"Zinzi is based in Cape Town, Western Cape, South Africa."},
+{k:['looking','available','open to','seeking','opportunit','role are'],a:"Zinzi is looking for an entry-level software development role. Email her at "+L.mail+" to talk."},
+{k:['speak','languages spoken','xhosa','english'],a:"Zinzi speaks English (fluent) and isiXhosa (native)."},
+{k:['thank','thanks','bye'],a:"You're welcome! Feel free to email Zinzi at "+L.mail+"."}
+];
+const SUG=['Tell me about Zinzi','What projects has she built?','What are her skills?','How can I contact her?'];
+const $=id=>document.getElementById(id),btn=$('chatBtn'),panel=$('chatPanel'),msgs=$('msgs'),inp=$('ci');
+function add(t,who,html){const d=document.createElement('div');d.className='m '+who;html?d.innerHTML=t:d.textContent=t;msgs.append(d);msgs.scrollTop=msgs.scrollHeight}
+function answer(q){const t=' '+q.toLowerCase()+' ';let best=null,sc=0;
+for(const e of KB){let n=0;for(const k of e.k)if(t.includes(k))n+=k.length>3?2:1;if(n>sc){sc=n;best=e}}
+return best?best.a:"I'm not sure about that one. I can tell you about Zinzi's projects, skills, education, experience, certificates, or how to contact her. For anything else, email "+L.mail+"."}
+function ask(q){q=q.trim();if(!q)return;add(q,'me');setTimeout(()=>add(answer(q),'bot',true),250)}
+function toggle(o){const open=o===undefined?!panel.classList.contains('open'):o;panel.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);if(open){if(!msgs.children.length)add("Hi! I'm Zinzi's portfolio assistant. Ask me about her projects, skills, education, experience or certificates.",'bot');inp.focus()}else btn.focus()}
+SUG.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.onclick=()=>ask(q);$('sug').append(b)});
+btn.onclick=()=>toggle();$('chatClose').onclick=()=>toggle(false);
+$('navChat').onclick=e=>{e.preventDefault();toggle(true)};
+$('cf').onsubmit=e=>{e.preventDefault();ask(inp.value);inp.value=''};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('open'))toggle(false)});
 </script>
 </body>
 </html>
